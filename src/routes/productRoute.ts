@@ -1,4 +1,4 @@
- import express from "express";
+import express from "express";
 import { getAllProducts } from "../services/productService";
 
  const router = express.Router()

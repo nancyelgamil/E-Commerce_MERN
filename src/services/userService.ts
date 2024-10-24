@@ -43,6 +43,7 @@ export const login = async({ email,password }: LoginParams) => {
     return { data: "Incorrect email or password!", statusCode: 400};
 };
 
+//json web token
 const generateJWT = (data : any) => {
     return jwt.sign(data,'v87B7#2#^^`fG(D')
 }
