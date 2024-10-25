@@ -45,5 +45,5 @@ export const login = async({ email,password }: LoginParams) => {
 
 //json web token
 const generateJWT = (data : any) => {
-    return jwt.sign(data,'v87B7#2#^^`fG(D')
+    return jwt.sign(data,process.env.JWT_SECRET || '')
 }
