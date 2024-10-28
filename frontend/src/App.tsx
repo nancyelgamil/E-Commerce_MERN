@@ -3,7 +3,6 @@ import HomePage from "./pages/HomePage"
 import Navbar from "./components/Navbar"
 import RegisterPage from "./pages/RegisterPage"
 import AuthProvider from "./context/Auth/AuthProvider"
-import { Login } from "@mui/icons-material"
 import LoginPage from "./pages/LoginPage"
 
 
