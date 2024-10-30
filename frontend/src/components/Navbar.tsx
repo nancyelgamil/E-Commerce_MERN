@@ -37,6 +37,11 @@ function Navbar() {
     navigate("/login");
   };
 
+  const handleMyOrders = () => {
+    navigate("/my-orders");
+    handleCloseUserMenu();
+  };
+
   const handleLogout = () => {
     logout();
     navigate("/");
@@ -46,6 +51,10 @@ function Navbar() {
   const handleCart = () => {
     navigate("/cart");
   };
+
+const handleRegister = () => {
+  navigate("/register")
+}
 
   return (
     <AppBar position="static">
@@ -138,7 +147,7 @@ function Navbar() {
                     open={Boolean(anchorElUser)}
                     onClose={handleCloseUserMenu}
                   >
-                    <MenuItem onClick={handleCloseUserMenu}>
+                    <MenuItem onClick={handleMyOrders}>
                       <Typography textAlign="center">My Orders</Typography>
                     </MenuItem>
                     <MenuItem onClick={handleLogout}>
@@ -147,6 +156,11 @@ function Navbar() {
                   </Menu>
                 </>
               ) : (
+                <Box gap={2}
+                display="flex"
+                flexDirection="row"
+                alignItems="center"
+                justifyContent="center">
                 <Button
                   variant="contained"
                   color="success"
@@ -154,8 +168,21 @@ function Navbar() {
                 >
                   Login
                 </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={handleRegister}
+                >
+                  Register
+                </Button>
+                </Box>
               )}
+
             </Box>
+
+
+
+
           </Box>
         </Toolbar>
       </Container>

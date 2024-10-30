@@ -1,6 +1,7 @@
 import userModel from "../models/userModel";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { orderModel } from "../models/orderModel";
 
 //Register New user, if exist return error, else save new user
 interface RegisterParams {
@@ -42,6 +43,19 @@ export const login = async({ email,password }: LoginParams) => {
 
     return { data: "Incorrect email or password!", statusCode: 400};
 };
+
+interface GetMyOrdersParams{
+  userId: string
+}
+export const getMyOrders = async ({ userId} :GetMyOrdersParams) =>{
+  try{
+    return {data : await orderModel.find({userId}), statusCode: 200 };
+  }
+  catch (err){
+throw err;
+  }
+}
+
 
 //json web token
 const generateJWT = (data : any) => {
