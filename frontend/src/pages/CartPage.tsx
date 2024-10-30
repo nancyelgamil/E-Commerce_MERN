@@ -19,7 +19,8 @@ const CartPage = () => {
 
   const handleQuantity = (productId: string, quantity: number) => {
     if (quantity <= 0) {
-      return;
+     // return;
+    handleRemoveItem(productId)
     }
 
     updateItemInCart(productId, quantity);

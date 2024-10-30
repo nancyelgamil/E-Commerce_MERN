@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import { useRef, useState } from "react";
 import { BASE_URL } from "../constants/baseUrl";
 import { useAuth } from "../context/Auth/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [error, setError] = useState("");
@@ -89,6 +89,21 @@ const LoginPage = () => {
             Login
           </Button>
           {error && <Typography sx={{ color: "red" }}>{error}</Typography>}
+        </Box>
+
+        <Box
+          sx={{
+
+            borderColor: "gray",
+            borderRadius: 2,
+            padding: 1,
+            backgroundColor: "lightgray",
+          }}
+        >
+          <Typography >
+            Don't have an account?
+            <Link to={"/register"} >Sign up</Link>
+          </Typography>
         </Box>
       </Box>
     </Container>
